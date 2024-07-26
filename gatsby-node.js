@@ -93,6 +93,7 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         item,
         plotsSellingItem,
+        itemImage: `${item.entityID.replace('minecraft:', '')}.png`, // Pass the item ID to the context
       },
     })
   })

@@ -1,0 +1,36 @@
+{
+  "plotNumber": 1,
+  "owner": "Dovaqn",
+  "shopName": "The Lighthouse",
+  "start_coords": {
+    "x": 3498,
+    "z": -1939
+  },
+  "end_coords": {
+    "x": 3547,
+    "z": -1893
+  },
+  "itemsForSale": [
+    {
+      "item": "Map Art"
+    },
+    {
+      "item": "minecraft:end_rod"
+    },
+    {
+      "item": "minecraft:sea_pickle"
+    },
+    {
+      "item": "minecraft:lantern"
+    },
+    {
+      "item": "minecraft:soul_lantern"
+    },
+    {
+      "item": "minecraft:glow_berries"
+    },
+    {
+      "item": "minecraft:ochre_froglight"
+    }
+  ]
+}
