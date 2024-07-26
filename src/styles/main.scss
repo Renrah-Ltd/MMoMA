@@ -1,3 +1,5 @@
+@import "mixins";
+
 :root {
     --content-width: 75rem;
     --grass-green: #5e7c16;
@@ -20,6 +22,17 @@ a {
         color: var(--redstone-red);
     }
 }
+
+
+ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    li {
+        padding: 0.25rem;
+    }
+}
+
 * {
     box-sizing: border-box;
 }
@@ -40,6 +53,12 @@ body {
     &--2 {
         grid-template-columns: 1fr 1fr;
     }
+
+    &--mobile-1 {
+        @include breakpoint(tabletdown) {
+            grid-template-columns: 1fr;
+        }
+    }
 }
 
 .inline {
@@ -52,11 +71,15 @@ body {
 
 header.header {
     display: grid;
-    grid-template-columns: 1fr 3fr;
     padding: 1rem;
     background: var(--grass-green);
     align-items: center;
     justify-content: center;
+    gap: 1rem;
+    @include breakpoint( laptop){ 
+        
+        grid-template-columns: 1fr 3fr;
+    }
     a {
         color: #fff;
     }
@@ -86,7 +109,6 @@ header.header {
             overflow-y: auto;
             z-index: 999;
             li {
-                padding: 8px;
                 border-bottom: 1px solid #ddd;
                 &:last-child {
                     border-bottom: none;
@@ -97,9 +119,30 @@ header.header {
                 a {
                     text-decoration: none;
                     color: #333;
+                    padding: 8px;
+                    width: 100%;
+                    display: block;
                 }
             }
         }
+    }
+}
+
+.plots-index {
+    display: grid;
+    grid-template-columns: 1fr ;
+    gap: 1rem;
+    @include breakpoint(laptop){
+    grid-template-columns: 1fr 1fr;
+    }
+    li {
+        display: flex;
+        flex-direction: column;
+        padding: 0.5rem;
+        @include card(1);
+    }
+    a {
+        font-size: 1.5rem;
     }
 }
 
@@ -109,12 +152,10 @@ main {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-
+    padding: 0.25rem;
     min-height: 80vh;
 
     .map {
-        position: sticky;
-        top: 0;
         pointer-events: none;
 
         iframe {
@@ -128,7 +169,12 @@ main {
     }
 
     .plot-info {
-        padding: 1rem 0;
+        padding: 1rem 0.5rem;
+
+        @include breakpoint(laptop){
+            padding: 1rem 0;
+
+        }
     }
 
     .item-icon {

@@ -15,7 +15,7 @@ const PlotTemplate = ({ data, pageContext }) => {
     return (
         <Layout className="plot">
           <Seo title={plotName} />
-            <div class="grid grid--2">
+            <div class="grid grid--2 grid--mobile-1">
                 <div className="map"><iframe src={mapURL} /></div>
                 <div className="plot-info">
                     <a href="/">« Back To Shopping District</a>
