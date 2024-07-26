@@ -2,6 +2,7 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import "../styles/main.scss"
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 
 const IndexPage = ({ data }) => {
   const plots = data.allPlotsJson.nodes
@@ -13,6 +14,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
+    <Seo title="Welcome" />
 
         <div class="grid grid--2 grid--mobile-1">
           <div className="map"><iframe src={`http://homesteadcraft.mcserver.us:8123/#homesteadcraft:${centerX}:76:${centerZ}:348:0:0:0:1:flat`} /></div>

@@ -4,12 +4,15 @@ import Img from "gatsby-image"
 
 import "../styles/main.scss"
 import Layout from "../components/layout"
+import Seo from "../components/seo"
 
 const ItemTemplate = ({ data, pageContext }) => {
     const { item, plotsSellingItem } = pageContext
 
     return (
         <Layout className="item-page">
+                <Seo title={item.name} />
+
             <h1><img className="item-icon" src={`/icons/${item.entityID.replace('minecraft:', '')}.png`} />
                 {item.name}</h1>
             <div class="item-info">

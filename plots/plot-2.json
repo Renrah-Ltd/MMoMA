@@ -1,0 +1,41 @@
+{
+  "plotNumber": 2,
+  "owner": "AshTrento",
+  "start_coords": {
+    "x": 3520,
+    "z": -1855
+  },
+  "end_coords": {
+    "x": 3520,
+    "z": -1855
+  },
+  "itemsForSale": [
+    {
+      "item": "minecraft:shulker_shell"
+    },
+    {
+      "item": "minecraft:name_tag"
+    },
+    {
+      "item": "minecraft:slime_block"
+    },
+    {
+      "item": "minecraft:honey_block"
+    },
+    {
+      "item": "minecraft:ender_chest"
+    },
+    {
+      "item": "minecraft:tnt"
+    },
+    {
+      "item": "minecraft:gunpowder"
+    },
+    {
+      "item": "minecraft:firework_rocket"
+    },
+    {
+      "item": "minecraft:golden_carrot"
+    }
+  ]
+}
