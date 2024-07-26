@@ -1,62 +1,172 @@
+:root {
+    --content-width: 75rem;
+    --grass-green: #5e7c16;
+    --dirt-brown: #8e5c42;
+    --stone-gray: #a0a0a0;
+    --water-blue: #3c97d6;
+    --wood-brown: #7a5c36;
+    --sand-yellow: #e7d08c;
+    --coal-black: #252525;
+    --iron-gray: #d8d8d8;
+    --gold-yellow: #f8d74c;
+    --redstone-red: #d00000;
+}
+
+a {
+    color: #000;
+    text-decoration: none;
+    font-weight: 900;
+    &:hover {
+        color: var(--redstone-red);
+    }
+}
+* {
+    box-sizing: border-box;
+}
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.grid {
+    display: grid;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    gap: 2rem;
+    &--1 {
+        grid-template-columns: 1fr;
+    }
+    &--2 {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+header.header {
+    display: grid;
+    grid-template-columns: 1fr 3fr;
+    padding: 1rem;
+    background: var(--grass-green);
+    align-items: center;
+    justify-content: center;
+    a {
+        color: #fff;
+    }
+
+    .search-bar {
+        position: relative;
+        width: 100%;
+        margin: 0 auto;
+        input {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            border: 1px solid #ddd;
+            border-top: none;
+            background: white;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 999;
+            li {
+                padding: 8px;
+                border-bottom: 1px solid #ddd;
+                &:last-child {
+                    border-bottom: none;
+                }
+                &:hover {
+                    background: #f0f0f0;
+                }
+                a {
+                    text-decoration: none;
+                    color: #333;
+                }
+            }
+        }
+    }
+}
+
 main {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  .map {
-    position: sticky;
-    top: 0;
-    pointer-events: none;
+    display: grid;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: column;
 
-    iframe {
-      width: 100%;
-      aspect-ratio: 1;
+    min-height: 80vh;
+
+    .map {
+        position: sticky;
+        top: 0;
+        pointer-events: none;
+
+        iframe {
+            width: 100%;
+            aspect-ratio: 1;
+        }
+
+        .active {
+            pointer-events: unset;
+        }
     }
 
-    .active {
-        pointer-events: unset;
+    .plot-info {
+        padding: 1rem 0;
     }
-  }
+}
 
-  .plot-info {
-    padding: 1rem 0;
-  }
+.item-page {
+    main {
+        grid-template-columns: 1fr;
+        margin: 0 auto;
+        max-width: var(--content-width);
+    }
 }
 
 .plot {
-  .plot-title {
-    padding: 1rem 0;
-    display: grid;
-    gap: 1rem;
-    h1,
-    p {
-      margin: 0;
-    }
-  }
-
-  .items-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 35rem;
-    margin: 0 auto 0 0;
-
-    .th {
-        font-weight: 900;
-        text-align: center;
-        border-block: 2px solid #000;
+    .plot-title {
+        padding: 1rem 0;
+        display: grid;
+        gap: 1rem;
+        h1,
+        p {
+            margin: 0;
+        }
     }
 
-    .trade {
-      border-bottom: 1px solid #ccc;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-column: 1 / -1;
-    }
-    .item {
-      padding: 0.5rem;
-    }
+    .items-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        max-width: 35rem;
+        margin: 0 auto 0 0;
 
-    .item-note {
-      font-size: 0.8rem;
+        .th {
+            font-weight: 900;
+            text-align: center;
+            border-block: 2px solid #000;
+        }
+
+        .trade {
+            border-bottom: 1px solid #ccc;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-column: 1 / -1;
+        }
+        .item {
+            padding: 0.5rem;
+        }
+
+        .item-note {
+            font-size: 0.8rem;
+        }
     }
-  }
 }

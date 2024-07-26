@@ -14,16 +14,18 @@ const IndexPage = ({ data }) => {
   return (
     <Layout>
 
-        <div className="map"><iframe src={`http://homesteadcraft.mcserver.us:8123/#homesteadcraft:${centerX}:76:${centerZ}:348:0:0:0:1:flat`} /></div>
-        <div className="sd-info">
-          <h1>Shopping District</h1>
-          <ul>
-            {plots.map(plot => (
-              <li key={plot.plotNumber}>
-                <Link to={`/plot/${plot.plotNumber}`}>Plot {plot.plotNumber}</Link> - {plot.owner}
-              </li>
-            ))}
-          </ul>
+        <div class="grid grid--2 grid--mobile-1">
+          <div className="map"><iframe src={`http://homesteadcraft.mcserver.us:8123/#homesteadcraft:${centerX}:76:${centerZ}:348:0:0:0:1:flat`} /></div>
+          <div className="sd-info">
+            <h1>Shopping District</h1>
+            <ul>
+              {plots.map(plot => (
+                <li key={plot.plotNumber}>
+                  <Link to={`/plot/${plot.plotNumber}`}>{plot.shopName ? plot.shopName : `Plot ${plot.plotNumber}`}</Link> - {plot.owner}
+                </li>
+              ))}
+            </ul>
+          </div>
         </div>
     </Layout>
   )
@@ -34,6 +36,7 @@ export const query = graphql`
     allPlotsJson {
       nodes {
         plotNumber
+        shopName
         owner
       }
     }

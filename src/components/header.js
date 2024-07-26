@@ -1,15 +1,10 @@
 import * as React from "react"
 import { Link } from "gatsby"
+import SearchBar from "./SearchBar"
 
 const Header = ({ siteTitle }) => (
   <header
-    style={{
-      margin: `0 auto`,
-      padding: `1rem 0`,
-      display: `flex`,
-      alignItems: `center`,
-      justifyContent: `space-between`,
-    }}
+    className="header"
   >
     <Link
       to="/"
@@ -20,6 +15,7 @@ const Header = ({ siteTitle }) => (
     >
       {siteTitle}
     </Link>
+      <SearchBar />
   </header>
 )
 

@@ -32,11 +32,14 @@ const Layout = ({ children, className }) => {
           style={{
             marginTop: `var(--space-5)`,
             fontSize: `var(--font-sm)`,
+            textAlign: 'center'
           }}
         >
-          © {new Date().getFullYear()} &middot; Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
+          <p>
+            © {new Date().getFullYear()} &middot; Built with
+            💜 by JackJackSlaps
+          </p>
+          <small>All Images, Names, and whatever else belong to whoever owns them.</small>
         </footer>
       </div>
     </>
