@@ -10,7 +10,7 @@
 module.exports = {
   siteMetadata: {
     title: `HomesteadCraft Shopping District Directory`,
-    description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
+    description: `Shopping District Directory for the Minecraft Server Homesteadcraft.`,
     author: `@jackjackslaps`,
     siteUrl: `https://homesteadcraftsd.slapsville.xyz/`,
   },
