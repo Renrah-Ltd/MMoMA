@@ -1,0 +1,76 @@
+{
+  "plotNumber": 46,
+  "owner": "JackJackSlaps",
+  "shopName": "MMoMA - Minecraft Museum of Modern Art",
+  "start_coords": {
+    "x": 3568,
+    "z": -1688
+  },
+  "end_coords": {
+    "x": 3598,
+    "z": -1659
+  },
+  "itemsForSale": [
+    {
+      "item": "MMoMA Ticket",
+      "qty": 1,
+      "for": "minecraft:diamond",
+      "forQty": 1,
+      "note": "Access To The Exhibits & Gift Shop"
+    },
+    {
+      "item": "MMoMA Ticket",
+      "qty": 1,
+      "for": "minecraft:hay_block",
+      "forQty": 16,
+      "note": "Access To The Exhibits & Gift Shop"
+    },
+    {
+      "item": "minecraft:item_frame",
+      "qty": 64,
+      "for": "minecraft:diamond",
+      "forQty": 1,
+      "note": "In Gift Shop"
+    },
+    {
+      "item": "minecraft:painting",
+      "qty": 16,
+      "for": "minecraft:diamond",
+      "forQty": 1,
+      "note": "In Truck"
+    },
+    {
+      "item": "minecraft:painting",
+      "qty": 32,
+      "for": "minecraft:diamond",
+      "forQty": 1,
+      "note": "In Gift Shop"
+    },
+    {
+      "item": "minecraft:item_frame",
+      "qty": 64,
+      "for": "minecraft:diamond",
+      "forQty": 1,
+      "note": "In Gift Shop"
+    },
+    {
+      "item": "minecraft:enchanted_book",
+      "qty": 2,
+      "for": "minecraft:diamond",
+      "forQty": 1,
+      "note": "Mending - in Gift Shop"
+    },
+    {
+      "item": "minecraft:enchanted_book",
+      "qty": 2,
+      "for": "minecraft:diamond",
+      "forQty": 1,
+      "note": "Silk Touch - in Gift Shop"
+    },
+    {
+      "item": "minecraft:enchanted_book",
+      "qty": 2,
+      "note": "Silk Touch - in Gift Shop"
+    }
+  ]
+}

@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Default Starter`,
+    title: `HomesteadCraft Shopping District Directory`,
     description: `Kick off your next, great Gatsby project with this default starter. This barebones starter ships with the main Gatsby configuration files you might need.`,
-    author: `@gatsbyjs`,
-    siteUrl: `https://gatsbystarterdefaultsource.gatsbyjs.io/`,
+    author: `@jackjackslaps`,
+    siteUrl: `https://homesteadcraftsd.slapsville.xyz/`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -23,6 +23,21 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `plots`,
+        path: `${__dirname}/plots/`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `items`,
+        path: `${__dirname}/items/`,
+      },
+    },
+    `gatsby-transformer-json`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
     {
@@ -39,5 +54,6 @@ module.exports = {
         icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
       },
     },
+    `gatsby-plugin-sass`,
   ],
 }

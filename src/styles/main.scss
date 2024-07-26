@@ -1,0 +1,62 @@
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  .map {
+    position: sticky;
+    top: 0;
+    pointer-events: none;
+
+    iframe {
+      width: 100%;
+      aspect-ratio: 1;
+    }
+
+    .active {
+        pointer-events: unset;
+    }
+  }
+
+  .plot-info {
+    padding: 1rem 0;
+  }
+}
+
+.plot {
+  .plot-title {
+    padding: 1rem 0;
+    display: grid;
+    gap: 1rem;
+    h1,
+    p {
+      margin: 0;
+    }
+  }
+
+  .items-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    max-width: 35rem;
+    margin: 0 auto 0 0;
+
+    .th {
+        font-weight: 900;
+        text-align: center;
+        border-block: 2px solid #000;
+    }
+
+    .trade {
+      border-bottom: 1px solid #ccc;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      grid-column: 1 / -1;
+    }
+    .item {
+      padding: 0.5rem;
+    }
+
+    .item-note {
+      font-size: 0.8rem;
+    }
+  }
+}
