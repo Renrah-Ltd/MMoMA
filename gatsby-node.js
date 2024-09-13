@@ -80,8 +80,15 @@ exports.createPages = async ({ graphql, actions }) => {
   // Item Pages
   items.forEach(item => {
     const plotsSellingItem = plots.filter(plot => {
-      console.dir({item, plot}, {depth: null})
+      console.dir({ item, plot }, { depth: null })
       const matchingPlotItems = plot.itemsForSale.filter((itemitem) => itemitem.item === item.entityID)
+
+      return !!(matchingPlotItems.length)
+    }
+    )
+    const plotsBuyingItem = plots.filter(plot => {
+      console.dir({ item, plot }, { depth: null })
+      const matchingPlotItems = plot.itemsForSale.filter((itemitem) => itemitem.for === item.entityID)
 
       return !!(matchingPlotItems.length)
     }
@@ -95,6 +102,7 @@ exports.createPages = async ({ graphql, actions }) => {
       context: {
         item,
         plotsSellingItem,
+        plotsBuyingItem,
         itemImage: `${item.entityID.replace('minecraft:', '')}.png`, // Pass the item ID to the context
       },
     })

@@ -7,7 +7,7 @@ import Layout from "../components/layout"
 import Seo from "../components/seo"
 
 const ItemTemplate = ({ data, pageContext }) => {
-    const { item, plotsSellingItem } = pageContext
+    const { item, plotsSellingItem, plotsBuyingItem } = pageContext
 
     return (
         <Layout className="item-page">
@@ -20,6 +20,20 @@ const ItemTemplate = ({ data, pageContext }) => {
                 <ul>
                     {plotsSellingItem.length > 0 ? (
                         plotsSellingItem.map((plot, index) => (
+                            <li key={index}>
+                                <Link to={`/plot/${plot.plotNumber}`}>
+                                    {plot?.shopName ? plot.shopName : `Plot ${plot.plotNumber}`} (Owner: {plot.owner})
+                                </Link>
+                            </li>
+                        ))
+                    ) : (
+                        <p>No shops currently selling this item</p>
+                    )}
+                </ul>
+                <h2>Shops buying this item:</h2>
+                <ul>
+                    {plotsBuyingItem?.length > 0 ? (
+                        plotsBuyingItem.map((plot, index) => (
                             <li key={index}>
                                 <Link to={`/plot/${plot.plotNumber}`}>
                                     {plot?.shopName ? plot.shopName : `Plot ${plot.plotNumber}`} (Owner: {plot.owner})
