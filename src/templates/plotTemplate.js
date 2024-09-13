@@ -11,7 +11,7 @@ const PlotTemplate = ({ data, pageContext }) => {
     const centerX = (plot.start_coords.x + plot.end_coords.x) / 2
     const centerZ = (plot.start_coords.z + plot.end_coords.z) / 2
 
-    const mapURL = `http://homesteadcraft.mcserver.us:8123/#homesteadcraft:${centerX}:76:${centerZ}:48:0:0:1:1:flat`
+    const mapURL = `https://homesteadcraft.mcserver.us:8123/#homesteadcraft:${centerX}:76:${centerZ}:48:0:0:1:1:flat`
     const plotName = plot.shopName ? plot.shopName : `Plot #${plot.plotNumber}`
     return (
         <Layout className="plot">

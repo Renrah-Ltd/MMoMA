@@ -1,9 +1,9 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-const Map = ({ centerX, centerZ, zoom=348, markers = [] }) => {
+const Map = ({ centerX, centerZ, zoom = 348, markers = [] }) => {
 
-    
+
     const markersMap = markers.map((marker, i) => {
         return (<Link to={`/plot/${marker.number}`} className="marker" data-plot={marker.number} style={{ "--x": marker.relative.x + "%", "--z": marker.relative.z + "%", }}></Link>)
     })
