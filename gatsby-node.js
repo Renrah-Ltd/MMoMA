@@ -20,8 +20,10 @@ exports.createPages = async ({ graphql, actions }) => {
           }
           itemsForSale{
           item
+          icon
           for
           qty
+          forIcon
           forQty
           note
           }

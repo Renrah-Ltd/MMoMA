@@ -1,7 +1,7 @@
 import { Link } from 'gatsby';
 import React from 'react';
 
-const Map = ({ centerX, centerZ, markers }) => {
+const Map = ({ centerX, centerZ, zoom=348, markers = [] }) => {
 
     
     const markersMap = markers.map((marker, i) => {
@@ -13,7 +13,7 @@ const Map = ({ centerX, centerZ, markers }) => {
             <div className="overlay">
                 {markersMap}
             </div>
-            <iframe src={`http://homesteadcraft.mcserver.us:8123/#homesteadcraft:${centerX}:76:${centerZ}:348:0:0:0:1:flat`} />
+            <iframe src={`http://homesteadcraft.mcserver.us:8123/#homesteadcraft:${centerX}:76:${centerZ}:${zoom}:0:0:0:1:flat`} />
         </div>
     );
 };

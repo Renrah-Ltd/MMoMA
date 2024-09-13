@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import "../styles/main.scss"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
+import Map from "../components/map"
 
 const PlotTemplate = ({ data, pageContext }) => {
     const { plot } = pageContext
@@ -16,7 +17,7 @@ const PlotTemplate = ({ data, pageContext }) => {
         <Layout className="plot">
           <Seo title={plotName} />
             <div class="grid grid--2 grid--mobile-1">
-                <div className="map"><iframe src={mapURL} /></div>
+                <Map centerX={centerX} centerZ={centerZ} zoom={35} />
                 <div className="plot-info">
                     <a href="/">« Back To Shopping District</a>
                     <div className="plot-title">
@@ -33,10 +34,12 @@ const PlotTemplate = ({ data, pageContext }) => {
                         {plot.itemsForSale && plot.itemsForSale.map((item, index) => {
                             console.log({ item });
                             const itemEntity = item.item?.entityID?.replace('minecraft:', '')
+                            const itemIcon = item.icon ? `/icons/${item.icon.replace('minecraft:','')}.png` : `/icons/${itemEntity}.png`
+                            console.log({itemEntity, itemIcon})
                             return (
                                 <div className="trade">
-                                    {item.for ? <div className="item item--for">{item.forQty} x <img className="item-icon" src={`/icons/${item.for.entityID.replace('minecraft:', '')}.png`} /> {item.for.name}</div> : <div className="item item--for">?</div>}
-                                    <div className="item item--get">{item.qty || '?'} x <Link href={itemEntity ? `/item/${itemEntity}` : null}><img className="item-icon" src={`/icons/${itemEntity}.png`} /> {item.item?.name || item.item}</Link>  {item.note && <div className="item-note">{item.note}</div>}
+                                    {item.for ? <div className="item item--for">{item.forQty} x <img className="item-icon" src={`/icons/${item.forIcon ? item.forIcon.replace('minecraft:', '') : item.for.entityID.replace('minecraft:', '')}.png`} /> {item.for.name}</div> : <div className="item item--for">?</div>}
+                                    <div className="item item--get">{item.qty || '?'} x <Link href={itemEntity ? `/item/${itemEntity}` : null}><img className="item-icon" src={itemIcon} /> {item.item?.name || item.item}</Link>  {item.note && <div className="item-note">{item.note}</div>}
                                     </div>
                                 </div>
                             )
@@ -65,7 +68,9 @@ export const query = graphql`
     }
     itemsForSale {
       item
+      icon
       for
+      forIcon
       qty
       forQty
       note

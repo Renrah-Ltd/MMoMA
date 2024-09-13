@@ -13,6 +13,7 @@
   "itemsForSale": [
     {
       "item": "MMoMA Ticket",
+      "icon": "minecraft:paper",
       "qty": 1,
       "for": "minecraft:diamond",
       "forQty": 1,
@@ -20,8 +21,10 @@
     },
     {
       "item": "MMoMA Ticket",
+      "icon": "minecraft:paper",
       "qty": 1,
       "for": "minecraft:hay_block",
+      "forIcon": "minecraft:hay_block",
       "forQty": 16,
       "note": "Access To The Exhibits & Gift Shop"
     },
