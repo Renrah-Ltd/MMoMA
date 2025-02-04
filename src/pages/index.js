@@ -12,7 +12,7 @@ const IndexPage = ({ data }) => {
   
 
   return (
-    <Layout>
+    <Layout className="home-page">
       <Seo title="Welcome" />
 
       <div class="grid grid--2 grid--mobile-1 mmoma-intro">

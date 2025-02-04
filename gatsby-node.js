@@ -35,6 +35,14 @@ exports.createPages = async ({ graphql, actions }) => {
           name
         }
       }
+        allArtJson {
+        nodes {
+          id
+          slug
+          name
+          description
+          image
+        }}
     }
   `)
 
@@ -45,6 +53,28 @@ exports.createPages = async ({ graphql, actions }) => {
 
   const plots = result.data.allPlotsJson.nodes
   const items = result.data.allItemsJson.nodes
+  const art = result.data.allArtJson.nodes
+
+  createPage({
+    path: `/art`,
+    component: path.resolve(`./src/templates/artArchive.js`),
+    context: {
+      art,
+    },
+  })
+
+  art.forEach((art)=> {
+    const slug = art?.slug || art?.name.toLowerCase().replace(/\s+/g, '-').replace(/[^\w-]/g, '')
+    createPage({
+      path: `/art/${slug}`,
+      component: path.resolve(`./src/templates/artTemplate.js`),
+      context: {
+        art,
+      },
+    })
+  })
+
+
 
   // Plots Pages
   plots.forEach(plot => {

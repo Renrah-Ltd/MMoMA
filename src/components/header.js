@@ -16,7 +16,7 @@ const Header = ({ siteTitle }) => (
       {siteTitle}
     </Link>
     <Link
-    className="gift-shop-button"
+    className="button gift-shop-button"
       to="/gift-shop"
       style={{
         fontSize: `var(--font-sm)`,

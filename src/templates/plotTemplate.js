@@ -20,13 +20,10 @@ const PlotTemplate = ({ data, pageContext }) => {
             <div class="grid grid--2 grid--mobile-1">
                <img src={mapImage} />
                 <div className="plot-info">
-                    <a href="/">« Back To Shopping District</a>
                     <div className="plot-title">
-                        <h1>{plotName}</h1>
+                        <h1>Check out the MMoMA Gift Shop</h1>
                         <div class="inline">
-                          {plot.shopName && <p>Plot {plot.plotNumber}</p>}
-                          <p><a target="_blank" href={mapURL}>{centerX} / / {centerZ}</a></p>
-                          <p>Owner: {plot.owner}</p>
+                       <p>Owner: {plot.owner}</p>
                         </div>
                     </div>
                     <h2>Items for Sale:</h2>
@@ -40,7 +37,7 @@ const PlotTemplate = ({ data, pageContext }) => {
                             return (
                                 <div className="trade">
                                     {item.for ? <div className="item item--for">{item.forQty} x <img className="item-icon" src={`/icons/${item.forIcon ? item.forIcon.replace('minecraft:', '') : item.for.entityID.replace('minecraft:', '')}.png`} /> {item.for.name}</div> : <div className="item item--for">?</div>}
-                                    <div className="item item--get">{item.qty || '?'} x <Link href={itemEntity ? `/item/${itemEntity}` : null}><img className="item-icon" src={itemIcon} /> {item.item?.name || item.item}</Link>  {item.note && <div className="item-note">{item.note}</div>}
+                                    <div className="item item--get">{item.qty || '?'} x <img className="item-icon" src={itemIcon} /> {item.item?.name || item.item}  {item.note && <div className="item-note">{item.note}</div>}
                                     </div>
                                 </div>
                             )
