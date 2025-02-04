@@ -115,9 +115,10 @@ header.header {
   width: 100%;
   top: 0rem;
   z-index: 9;
+  gap: calc(var(--gutter) * 2);
 
   @include breakpoint(laptop) {
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr auto auto;
   }
 
   a {
@@ -431,6 +432,15 @@ body:not(:has(.home-page)) {
   }
 }
 
+.art-page {
+    width: 100%;
+
+    img {
+        display: block;
+        max-width: 100%;
+    }
+}
+
 .art-card {
   display: flex;
   flex-direction: column;
@@ -487,4 +497,23 @@ body:not(:has(.home-page)) {
       bottom: var(--gutter);
     }
   }
+}
+
+
+.logo-and-content {
+    display: grid; 
+    grid-template-columns: 10rem 1fr;
+    z-index: 10;
+    position: relative;
+}
+
+.site-logo {
+    z-index: 2;
+    position: relative;
+    background: #7a7e7d;
+
+    img {
+        position: sticky;
+        top: 0;
+    }
 }

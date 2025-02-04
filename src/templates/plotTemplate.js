@@ -24,6 +24,7 @@ const PlotTemplate = ({ data, pageContext }) => {
                         <h1>Check out the MMoMA Gift Shop</h1>
                         <div class="inline">
                        <p>Owner: {plot.owner}</p>
+                       <p>In the HomesteadCraft Shopping District</p><p>NE Corner of 4️⃣🟩</p>
                         </div>
                     </div>
                     <h2>Items for Sale:</h2>
