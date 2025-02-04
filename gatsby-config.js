@@ -9,10 +9,10 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `HomesteadCraft Shopping District Directory`,
-    description: `Shopping District Directory for the Minecraft Server Homesteadcraft.`,
+    title: `MMoMA - Minecraft Museum of Modern Art`,
+    description: `Homesteadcraft's Premier Map Art Gallery.`,
     author: `@jackjackslaps`,
-    siteUrl: `https://homesteadcraftsd.slapsville.xyz/`,
+    siteUrl: `https://mmoma.slapsville.xyz/`,
   },
   plugins: [
     `gatsby-plugin-image`,
@@ -43,13 +43,12 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Homesteadcraft Shopping District`,
-        short_name: `Homesteadcraft SD`,
+        name: `Minecraft Museum of Modern Art`,
+        short_name: `MMoMA`,
         start_url: `/`,
-        background_color: `#663399`,
+        background_color: `#ffffff`,
         // This will impact how browsers show your PWA/website
         // https://css-tricks.com/meta-theme-color-and-trickery/
-        // theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `src/images/diamond.png`, // This path is relative to the root of the site.
       },

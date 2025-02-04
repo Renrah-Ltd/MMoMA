@@ -23,7 +23,6 @@ exports.createPages = async ({ graphql, actions }) => {
           icon
           for
           qty
-          forIcon
           forQty
           note
           }
@@ -65,7 +64,7 @@ exports.createPages = async ({ graphql, actions }) => {
     })
 
     createPage({
-      path: `/plot/${plot.plotNumber}`,
+      path: `/gift-shop`,
       component: path.resolve(`./src/templates/plotTemplate.js`),
       context: {
         plotNumber: plot.plotNumber,

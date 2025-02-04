@@ -30,10 +30,13 @@ const Layout = ({ children, className }) => {
       >
         <main>{children}</main>
         <footer
+        className="footer"
           style={{
             marginTop: `var(--space-5)`,
             fontSize: `var(--font-sm)`,
-            textAlign: 'center'
+            textAlign: 'center',
+            background: "var(--black)",
+            color: "var(--white)"
           }}
         >
           <p>

@@ -4,6 +4,7 @@ import "../styles/main.scss"
 import Layout from "../components/layout"
 import Seo from "../components/seo"
 import Map from "../components/map"
+import mapImage from "../images/gift-shop-map.png"
 
 const PlotTemplate = ({ data, pageContext }) => {
     const { plot } = pageContext
@@ -17,7 +18,7 @@ const PlotTemplate = ({ data, pageContext }) => {
         <Layout className="plot">
           <Seo title={plotName} />
             <div class="grid grid--2 grid--mobile-1">
-                <Map centerX={centerX} centerZ={centerZ} zoom={35} />
+               <img src={mapImage} />
                 <div className="plot-info">
                     <a href="/">« Back To Shopping District</a>
                     <div className="plot-title">
@@ -70,7 +71,6 @@ export const query = graphql`
       item
       icon
       for
-      forIcon
       qty
       forQty
       note

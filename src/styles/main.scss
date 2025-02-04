@@ -12,6 +12,12 @@
     --iron-gray: #d8d8d8;
     --gold-yellow: #f8d74c;
     --redstone-red: #d00000;
+
+    --black: var(--coal-black);
+    --white: var(--iron-gray);
+    --vivid-white: #fff;
+
+    --gutter: 1rem;
 }
 
 a {
@@ -42,6 +48,7 @@ ul {
 body {
     margin: 0;
     padding: 0;
+    background: var(--white);
 }
 
 .grid {
@@ -77,22 +84,48 @@ body {
     }
 }
 
+
+
+.buttons {
+    display: flex; 
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: var(--gutter);
+}
+
+.button  {
+    background: var(--black);
+    color: var(--white);
+    padding: 1em 2em;
+    font-weight: 100;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+
 header.header {
     display: grid;
     padding: 1rem;
-    background: var(--grass-green);
+    background: var(--white);
     align-items: center;
     justify-content: center;
     gap: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0rem;
+    z-index: 9;
 
     @include breakpoint(laptop) {
 
-        grid-template-columns: 1fr 3fr;
+        grid-template-columns: 1fr auto;
     }
 
     a {
-        color: #fff;
+        color: var(--black);
     }
+
+    
 
     .search-bar {
         position: relative;
@@ -144,6 +177,17 @@ header.header {
     }
 }
 
+
+footer.footer {
+    padding: calc(var(--gutter) * 2);
+
+    display: flex;
+    flex-direction: column;
+    gap: var(--gutter);
+
+    p {margin: 0;}
+}
+
 .plots-index {
     display: grid;
     grid-template-columns: 1fr;
@@ -177,7 +221,6 @@ main {
     align-items: center;
     justify-content: flex-start;
     flex-direction: column;
-    padding: 0.25rem;
     min-height: 80vh;
 
     .plot-info {
@@ -197,6 +240,55 @@ main {
         display: inline-block
     }
 }
+
+.mmoma-intro {
+    display: grid;
+    align-items: stretch;
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 auto;
+
+    text-align: left;
+    gap: 1rem;
+    position: relative;
+    z-index: 10;
+
+    background: var(--white);
+
+    .image-wrapper {
+        height: 100dvh;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    .intro__text {
+        padding: calc(var(--gutter) * 4) var(--gutter);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 2rem;
+
+        p, h1 {
+            margin: 0;
+            line-height: 1;
+        }
+
+        p {
+            font-size: 3rem;
+        }
+
+        h1 {
+            font-size: 8rem;
+        }
+
+        .button{ font-size: 1.5rem;}
+    }
+}
+
 
 .item-page {
     main {

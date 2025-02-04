@@ -15,7 +15,16 @@ const Header = ({ siteTitle }) => (
     >
       {siteTitle}
     </Link>
-      <SearchBar />
+    <Link
+    className="gift-shop-button"
+      to="/gift-shop"
+      style={{
+        fontSize: `var(--font-sm)`,
+        textDecoration: `none`,
+      }}
+    >
+      Gift Shop
+    </Link>
   </header>
 )
 
