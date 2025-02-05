@@ -516,9 +516,9 @@ body:not(:has(.home-page)) {
 .site-logo {
   z-index: 6;
   position: relative;
-  background: #7a7e7d;
-  border-right: 1px solid darken(#7a7e7d, 10);
-  @include card(2);
+  background: #737373;
+  border-right: 1px solid lighten(#7a7e7d, 10);
+  @include card(3);
 
   img {
     width: 100%;
