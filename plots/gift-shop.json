@@ -34,13 +34,6 @@
       "note": "In Gift Shop"
     },
     {
-      "item": "minecraft:item_frame",
-      "qty": 32,
-      "for": "minecraft:diamond",
-      "forQty": 1,
-      "note": "In Gift Shop"
-    },
-    {
       "item": "minecraft:enchanted_book",
       "qty": 2,
       "for": "minecraft:diamond",
@@ -53,6 +46,20 @@
       "for": "minecraft:diamond",
       "forQty": 1,
       "note": "Silk Touch - in Gift Shop"
+    },
+    {
+      "item": "minecraft:firework_rocket",
+      "qty": 64,
+      "for": "minecraft:diamond",
+      "forQty": 1,
+      "note": "Lvls 1, 2, & 3 - on 2nd floor"
+    },
+    {
+      "item": "minecraft:map",
+      "qty": 1,
+      "for": "minecraft:diamond_block",
+      "forQty": 1,
+      "note": "Dark Side of The Moon Map Art - on 2nd Floor"
     }
   ]
 }
