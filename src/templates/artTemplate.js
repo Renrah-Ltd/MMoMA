@@ -16,7 +16,14 @@ const ArtTemplate = ({ data, pageContext }) => {
 
                 <img src={art.image} />
 
-            <h1>{art.name}</h1>
+            <div className="art-single__description">
+                <h1>{art.name}</h1>
+
+                {art?.description && (<div dangerouslySetInnerHTML={{__html: art.description}} />)}
+                {art?.forSale && (<div>For Sale</div>)}
+
+
+            </div>
             
         </Layout>
     )

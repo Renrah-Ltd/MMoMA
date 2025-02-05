@@ -6,11 +6,12 @@
  */
 
 import * as React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { useStaticQuery, graphql, Link } from "gatsby"
 
 import Header from "./header"
 import Seo from "./seo"
 import logo from "../images/mmoma-logo.png"
+import Nav from "./nav"
 
 const Layout = ({ children, className }) => {
   const data = useStaticQuery(graphql`
@@ -26,7 +27,7 @@ const Layout = ({ children, className }) => {
   return (
     <>
     <div className="logo-and-content">
-      <div class="site-logo"><img src={logo} /></div>
+      <div class="site-logo"><Link to="/"><img src={logo} /></Link><div className="mobile-nav"><Nav /></div></div>
       <div
         className={className}
       >

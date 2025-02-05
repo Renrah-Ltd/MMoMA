@@ -1,6 +1,7 @@
 import * as React from "react"
 import { Link } from "gatsby"
 import SearchBar from "./SearchBar"
+import Nav from "./nav"
 
 const Header = ({ siteTitle }) => (
   <header
@@ -15,25 +16,9 @@ const Header = ({ siteTitle }) => (
     >
       {siteTitle}
     </Link>
-    <Link
-      to="/art"
-      style={{
-        fontSize: `var(--font-sm)`,
-        textDecoration: `none`,
-      }}
-    >
-      Art
-    </Link>
-    <Link
-    className="button gift-shop-button"
-      to="/gift-shop"
-      style={{
-        fontSize: `var(--font-sm)`,
-        textDecoration: `none`,
-      }}
-    >
-      Gift Shop
-    </Link>
+    <div class="desktop-nav">
+      <Nav/>
+    </div>
   </header>
 )
 

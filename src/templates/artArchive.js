@@ -14,7 +14,7 @@ const ArtArchive = ({ data, pageContext }) => {
         <Layout className="art-page art-archive">
                 <Seo title={"Look at our art"} />
 
-<div class="grid grid--3">{artMap}</div>            
+<div class="grid grid--3 grid--mobile-2">{artMap}</div>            
         </Layout>
     )
 }

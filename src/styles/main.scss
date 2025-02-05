@@ -74,6 +74,17 @@ body {
       grid-template-columns: 1fr;
     }
   }
+
+  &--mobile-2 {
+    @include breakpoint(tabletdown) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  &--mobile-3 {
+    @include breakpoint(tabletdown) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
 }
 
 .inline {
@@ -191,32 +202,6 @@ footer.footer {
   }
 }
 
-.plots-index {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-
-  @include breakpoint(laptop) {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .plot-card {
-    transition: 300ms;
-    display: flex;
-    flex-direction: column;
-    padding: 0.5rem;
-    @include card(1);
-
-    &.hover {
-      border-left: 5px solid var(--grass-green);
-    }
-  }
-
-  a {
-    font-size: 1.5rem;
-  }
-}
-
 main {
   display: grid;
   display: flex;
@@ -257,7 +242,11 @@ main {
   background: var(--white);
 
   .image-wrapper {
-    height: 100dvh;
+    height: 50dvh;
+
+    @include breakpoint(laptop) {
+      height: 100dvh;
+    }
 
     img {
       width: 100%;
@@ -267,11 +256,17 @@ main {
   }
 
   .intro__text {
-    padding: calc(var(--gutter) * 4) var(--gutter);
+    padding: calc(var(--gutter) * 2) var(--gutter);
     display: flex;
     flex-direction: column;
     justify-content: center;
+    gap: var(--gutter);
+
+    @include breakpoint(laptop) {
+      padding: calc(var(--gutter) * 4) var(--gutter);
     gap: 2rem;
+
+    }
 
     p,
     h1 {
@@ -280,15 +275,26 @@ main {
     }
 
     p {
-      font-size: 3rem;
+      font-size: 1.5rem;
+      @include breakpoint(laptop) {
+        font-size: 3rem;
+      }
     }
 
     h1 {
-      font-size: 8rem;
+      font-size: 3.5rem;
+
+      @include breakpoint(laptop) {
+        font-size: 8rem;
+      }
     }
 
     .button {
-      font-size: 1.5rem;
+      
+      @include breakpoint(laptop){
+        font-size: 1.5rem;
+          
+      }
     }
   }
 }
@@ -301,124 +307,7 @@ main {
   }
 }
 
-.plot {
-  .plot-title {
-    padding: 1rem 0;
-    display: grid;
-    gap: 1rem;
 
-    h1,
-    p {
-      margin: 0;
-    }
-  }
-
-  .items-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    max-width: 35rem;
-    margin: 0 auto 0 0;
-
-    .th {
-      font-weight: 900;
-      text-align: center;
-      border-block: 2px solid #000;
-    }
-
-    .trade {
-      border-bottom: 1px solid #ccc;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      grid-column: 1 / -1;
-    }
-
-    .item {
-      padding: 0.5rem;
-    }
-
-    .item-note {
-      font-size: 0.8rem;
-    }
-  }
-}
-
-.map {
-  position: relative;
-
-  .overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 69.37%;
-    aspect-ratio: 371/367;
-
-    .marker {
-      position: absolute;
-      top: var(--z);
-      left: var(--x);
-      width: 0.75rem;
-      height: 0.75rem;
-      border-radius: 50%;
-      display: block;
-      transform: translate(-50%, -50%);
-      z-index: 2;
-
-      &:before,
-      &:after {
-        content: "";
-        position: absolute;
-        width: 110%;
-        height: 110%;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -70%) rotate(45deg);
-        border: 2px solid #fff;
-        z-index: -1;
-        border-radius: 100% 100% 0;
-        transition: 300ms;
-      }
-
-      &:after {
-        border: 1px solid cyan;
-        background: rgba(0, 0, 0, 0.5);
-      }
-    }
-  }
-
-  iframe {
-    pointer-events: none;
-    width: 100%;
-    aspect-ratio: 1;
-
-    #app {
-      display: none;
-    }
-  }
-
-  .active {
-    pointer-events: unset;
-  }
-}
-
-@for $i from 1 through 50 {
-  [data-plot="#{$i}"]:hover,
-  body:has([data-plot="#{$i}"]:hover) [data-plot="#{$i}"] {
-    transition: 100ms;
-
-    &.marker {
-      transform: translate(-50%, -50%);
-      &:after {
-        background-color: var(--redstone-red);
-        border-color: var(--redstone-red);
-      }
-    }
-
-    &.plot-card {
-      border-left: 5px solid var(--grass-green);
-    }
-  }
-}
 
 body:not(:has(.home-page)) {
   header.header {
@@ -433,12 +322,20 @@ body:not(:has(.home-page)) {
 }
 
 .art-page {
-    width: 100%;
+  width: 100%;
 
-    img {
-        display: block;
-        max-width: 100%;
-    }
+  img {
+    display: block;
+    max-width: 100%;
+  }
+}
+
+.art-single{
+
+  &__description {
+    padding: var(--gutter);
+    width: 100%;
+  }
 }
 
 .art-card {
@@ -499,21 +396,28 @@ body:not(:has(.home-page)) {
   }
 }
 
-
 .logo-and-content {
-    display: grid; 
+  display: grid;
+  grid-template-columns: 15% 1fr;
+  z-index: 10;
+  position: relative;
+
+  @include breakpoint(laptop) {
     grid-template-columns: 10rem 1fr;
-    z-index: 10;
-    position: relative;
+  }
 }
 
 .site-logo {
-    z-index: 2;
-    position: relative;
-    background: #7a7e7d;
+  z-index: 2;
+  position: relative;
+  background: #7a7e7d;
 
-    img {
-        position: sticky;
-        top: 0;
-    }
+  img {
+    width: 100%;
+    position: sticky;
+    top: 0;
+  }
 }
+
+
+@import "nav";

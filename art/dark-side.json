@@ -2,6 +2,7 @@
     "slug": "dark-side",
     "id": "dark-side",
     "name": "The Dark Side of the Moon",
-    "description": "",
-    "image": "/images/dsotm.png"
+    "description": "The Dark Side of the Moon is a drop dead gorgeous album, and a sonically challenging piece of album art to boot.",
+    "image": "/images/dsotm.png",
+    "forSale": true
 }
