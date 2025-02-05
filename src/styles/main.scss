@@ -80,6 +80,7 @@ body {
       grid-template-columns: 1fr 1fr;
     }
   }
+
   &--mobile-3 {
     @include breakpoint(tabletdown) {
       grid-template-columns: 1fr 1fr 1fr;
@@ -213,7 +214,6 @@ main {
   justify-content: flex-start;
   flex-direction: column;
   min-height: 80vh;
-  padding-inline: var(--gutter);
 
   .plot-info {
     padding: 1rem 0.5rem;
@@ -266,6 +266,7 @@ main {
     flex-direction: column;
     justify-content: center;
     gap: var(--gutter);
+    width: 100%;
 
     @include breakpoint(laptop) {
       padding: calc(var(--gutter) * 4) var(--gutter);
@@ -280,13 +281,16 @@ main {
 
     p {
       font-size: 1.5rem;
+
       @include breakpoint(laptop) {
         font-size: 3rem;
       }
     }
 
     h1 {
-      font-size: 3.5rem;
+      overflow-wrap: anywhere;
+      white-space: wrap;
+      font-size: 2.5rem;
 
       @include breakpoint(laptop) {
         font-size: 8rem;
@@ -301,6 +305,79 @@ main {
   }
 }
 
+.homesteadcraft-intro {
+  @extend .mmoma-intro;
+
+
+  .image-wrapper {
+    height: 50dvh;
+
+    img {
+      object-position: top center;
+    }
+  }
+
+  .intro__text {
+    width: 100%;
+    max-width: 90%;
+    margin: 0 auto;
+    padding: var(--gutter) calc(var(--gutter)*0.5) calc(var(--gutter)*2);
+  
+    @include breakpoint(laptop) {
+      width: 60vw;
+      padding: var(--gutter);
+
+    }
+
+    * {
+      margin: 0
+    }
+
+    p {
+      font-size: 1rem;
+      line-height: 2;
+      margin-bottom: 0.5em;
+      &.large {
+        font-size: 1.5rem;
+      }
+
+      @include breakpoint(laptop) {
+        font-size: 1.5rem;
+
+        &.large {
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    .server-address {
+      font-family: monospace;
+      font-size: 1rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      padding: 0.25em;
+      background: color-mix(in srgb, var(--redstone-red), transparent 90%);
+      border: 2px solid var(--redstone-red);
+      border-radius: 5px;
+      text-align: center;
+
+      @include breakpoint(laptop) {
+        font-size: 2rem;
+
+      }
+    }
+
+    code {
+      background: color-mix(in srgb, var(--redstone-red), transparent 90%);
+      border: 2px solid var(--redstone-red);
+      padding-inline: 0.25rem;
+      border-radius: 5px;
+      display: inline-block;
+    }
+  }
+}
+
+
 .item-page {
   main {
     grid-template-columns: 1fr;
@@ -312,6 +389,10 @@ main {
 body:not(:has(.home-page)) {
   header.header {
     position: relative;
+  }
+
+  main {
+    padding-inline: var(--gutter);
   }
 }
 
@@ -369,8 +450,8 @@ body:not(:has(.home-page)) {
     max-width: 80%;
     z-index: 2;
 
-    @include breakpoint(laptop){
-        font-size: 2.5rem;
+    @include breakpoint(laptop) {
+      font-size: 2.5rem;
     }
   }
 
@@ -413,7 +494,7 @@ body:not(:has(.home-page)) {
       font-size: 1rem;
       text-transform: uppercase;
       letter-spacing: 1px;
-      line-height:1;
+      line-height: 1;
       top: var(--gutter);
       @include card(1, var(--black));
 
@@ -469,17 +550,20 @@ img {
   grid-template-columns: 1fr 1fr;
   max-width: 35rem;
   margin: 0 auto 0 0;
+
   .th {
     font-weight: 900;
     text-align: center;
     border-block: 2px solid #000;
   }
+
   .trade {
     border-bottom: 1px solid #ccc;
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-column: 1 / -1;
   }
+
   .item {
     padding: 0.5rem;
   }
