@@ -89,12 +89,13 @@ body {
 
 .inline {
   display: flex;
-  gap: 1rem;
+  gap: calc(var(--gutter) * 0.25);
+  padding: var(--gutter);
   flex-wrap: wrap;
 
   p {
     border-right: 1px solid #ccc;
-    padding-right: 1rem;
+    margin: 0;
   }
 }
 
@@ -264,8 +265,7 @@ main {
 
     @include breakpoint(laptop) {
       padding: calc(var(--gutter) * 4) var(--gutter);
-    gap: 2rem;
-
+      gap: 2rem;
     }
 
     p,
@@ -290,10 +290,8 @@ main {
     }
 
     .button {
-      
-      @include breakpoint(laptop){
+      @include breakpoint(laptop) {
         font-size: 1.5rem;
-          
       }
     }
   }
@@ -306,8 +304,6 @@ main {
     max-width: var(--content-width);
   }
 }
-
-
 
 body:not(:has(.home-page)) {
   header.header {
@@ -330,8 +326,7 @@ body:not(:has(.home-page)) {
   }
 }
 
-.art-single{
-
+.art-single {
   &__description {
     padding: var(--gutter);
     width: 100%;
@@ -366,9 +361,13 @@ body:not(:has(.home-page)) {
 
     color: #fff;
     transition: 300ms;
-    font-size: 2.5rem;
+    font-size: 1rem;
     max-width: 80%;
     z-index: 2;
+
+    @include breakpoint(laptop){
+        font-size: 2.5rem;
+    }
   }
 
   &:after {
@@ -392,6 +391,25 @@ body:not(:has(.home-page)) {
     h2 {
       opacity: 1;
       bottom: var(--gutter);
+    }
+  }
+
+
+  &.for-sale {
+    overflow: hidden;
+
+    &:before {
+      content: "For Sale";
+      background: var(--redstone-red);
+      color: var(--iron-gray);
+      display: block;
+      position: absolute;
+      z-index: 10;
+      padding: 0.15em 2em;
+      transform: rotate(-45deg) translate( -50%, -50%);
+      top: -1rem;
+      left: 1rem;
+
     }
   }
 }
@@ -419,5 +437,45 @@ body:not(:has(.home-page)) {
   }
 }
 
-
 @import "nav";
+
+.map {
+  width: 100%;
+}
+
+.plot-title {
+  h1 {
+    margin: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+}
+
+
+
+.items-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  max-width: 35rem;
+  margin: 0 auto 0 0;
+  .th {
+    font-weight: 900;
+    text-align: center;
+    border-block: 2px solid #000;
+  }
+  .trade {
+    border-bottom: 1px solid #ccc;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-column: 1 / -1;
+  }
+  .item {
+    padding: 0.5rem;
+  }
+
+  .item-note {
+    font-size: 0.8rem;
+  }
+}

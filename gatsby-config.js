@@ -9,7 +9,7 @@
  */
 module.exports = {
   siteMetadata: {
-    title: `MMoMA - Minecraft Museum of Modern Art`,
+    title: `Minecraft Museum of Modern Art`,
     description: `Homesteadcraft's Premier Map Art Gallery.`,
     author: `@jackjackslaps`,
     siteUrl: `https://mmoma.slapsville.xyz/`,
