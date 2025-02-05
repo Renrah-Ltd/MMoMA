@@ -130,7 +130,7 @@ header.header {
   gap: calc(var(--gutter) * 2);
 
   @include breakpoint(laptop) {
-    grid-template-columns: 1fr auto auto;
+    grid-template-columns: 1fr auto;
   }
 
   a {

@@ -1,32 +1,32 @@
 .desktop-nav {
-
-
-    display: none;
-    @include breakpoint(laptop){
-        display: grid; grid-template-columns: 1fr 1fr;
-    }
+  display: none;
+  @include breakpoint(laptop) {
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    justify-content: center;
+    gap: calc(var(--gutter) * 2);
+  }
 }
 
-
 .mobile-nav {
-    display: grid; grid-template-columns: 1fr;
-    @include breakpoint(laptop){
-        display: none;
-    }
+  display: grid;
+  grid-template-columns: 1fr;
+  @include breakpoint(laptop) {
+    display: none;
+  }
 
-    a {
-        font-size: 0.8rem!important;
-        display:  flex;
-        align-items: center;
-        justify-content: center;
-        text-align: center;
-        padding: 1rem 0;
-        border-top: 1px solid var(--black);
-    }
+  a {
+    font-size: 0.8rem !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid var(--black);
+  }
 
-
-    .button {
-        width: 100%;
-    }
-
+  .button {
+    width: 100%;
+  }
 }
