@@ -51,7 +51,7 @@ const Layout = ({ children, className }) => {
         © {new Date().getFullYear()} &middot; Built with
         💜 by JackJackSlaps
       </p>
-      <small>All Images, Names, and whatever else belong to whoever owns them.</small>
+      <small>All Images, Names, and whatever else belong to whoever owns them. Nothing is actually for sale.</small>
     </footer>
     </>
   )
